@@ -116,7 +116,7 @@ gpt_oss_schema = {
 }
 
 smollm_schema = {
-    "x-regex": r"(?:<think>\n?(?P<thinking>.+?)\n?</think>)?\s*(?:<tool_call>(?P<tool_calls>.+?)</tool_call>)?\s*(?P<content>.+?)?\s*(?:<\|im_end\|>|$)",
+    "x-regex": r"(?s)(?:<think>\n?(?P<thinking>.+?)\n?</think>)?\s*(?:<tool_call>(?P<tool_calls>.+?)</tool_call>)?\s*(?P<content>.+?)?(?:<\|im_end\|>)?$",
     "type": "object",
     "properties": {
         "role": {"const": "assistant"},
