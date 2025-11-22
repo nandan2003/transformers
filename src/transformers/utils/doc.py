@@ -131,6 +131,10 @@ def _prepare_output_docstrings(output_type, config_class, min_indent=None, add_i
     """
     Prepares the return part of the docstring using `output_type`.
     """
+
+    if output_type.__doc__ is None:
+        return ""
+
     output_docstring = output_type.__doc__
     params_docstring = None
     if output_docstring is not None:
